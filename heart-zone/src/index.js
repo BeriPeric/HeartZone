@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+//import LaunchPage from './launchpage/LaunchPage';
+//import AccountCreationPage from './AccountCreationPage/AccountCreationPage';
+//import ProfileCreation from './ProfileCreation/ProfileCreation';
+//import MainMatching from './MainMatching/MainMatching';
+//import Chats from './Chats/Chats';
+//import ChatRoom from './ChatRoom/ChatRoom';
+//import LoginPage from './LoginPage/LoginPage';
+import Matches from './Matches/Matches';
+
+
+
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Matches />
   </React.StrictMode>
 );
 
