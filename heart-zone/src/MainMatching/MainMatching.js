@@ -1,5 +1,4 @@
 import './MainMatching.css';
-
 import * as React from "react";
 
 function MainMatching(props) {
@@ -21,18 +20,21 @@ function MainMatching(props) {
           <div className="div-4">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c41563347b648e29d2410cdd8529c96293e65008badb80fc7c8cd9fb89b62e3?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b01892248bead1e5710d226ec699587a01f987c4e136db5a08664fc6dc781dec?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
               className="img-3"
             />
             <div className="div-5">
               <div className="div-6">
-                <div className="div-7">Peyton, 21</div>
+                <div className="div-7">
+                  Dakota, 20
+                  <br />
+                </div>
                 <div className="div-8">
-                  <div className="div-9">Comp Sci</div>
-                  <div className="div-10">C++</div>
+                  <div className="div-9">CyberSec</div>
+                  <div className="div-10">Java</div>
                 </div>
               </div>
-              <div className="div-11">Linux</div>
+              <div className="div-11">Mac</div>
             </div>
           </div>
           <div className="div-12" />
@@ -95,15 +97,14 @@ function MainMatching(props) {
         .div-4 {
           disply: flex;
           flex-direction: column;
-          fill: url(<path-to-image>), lightgray 50% / cover no-repeat;
           overflow: hidden;
           align-self: stretch;
           position: relative;
           display: flex;
-          aspect-ratio: 0.74;
-          margin-top: 13px;
+          aspect-ratio: 0.72;
+          margin-top: 10px;
           width: 100%;
-          padding-bottom: 23px;
+          padding-bottom: 37px;
           text-align: center;
         }
         .img-3 {
@@ -124,8 +125,9 @@ function MainMatching(props) {
           );
           display: flex;
           align-items: end;
-          gap: 13px;
-          padding: 80px 77px 0 11px;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 80px 66px 0 11px;
         }
         .div-6 {
           display: flex;
@@ -140,7 +142,7 @@ function MainMatching(props) {
         }
         .div-8 {
           display: flex;
-          margin-top: 12px;
+          margin-top: 13px;
           gap: 13px;
           font-size: 15px;
           color: #fbf6ff;
@@ -152,7 +154,7 @@ function MainMatching(props) {
           border-radius: 55px 55px 0px 0px;
           background-color: #4d91f6;
           flex-grow: 1;
-          padding: 7px 22px 1px;
+          padding: 7px 21px 1px;
         }
         .div-10 {
           font-family: Inter, sans-serif;
@@ -160,7 +162,7 @@ function MainMatching(props) {
           background-color: #e9be23;
           justify-content: center;
           flex-grow: 1;
-          padding: 6px 12px;
+          padding: 6px 11px;
         }
         .div-11 {
           border-radius: 55px 55px 0px 0px;
@@ -169,7 +171,7 @@ function MainMatching(props) {
           justify-content: center;
           color: #fbf6ff;
           white-space: nowrap;
-          padding: 6px 15px;
+          padding: 6px 19px;
           font: 400 15px Inter, sans-serif;
         }
         .div-12 {
@@ -179,7 +181,7 @@ function MainMatching(props) {
         }
         .div-13 {
           display: flex;
-          margin-top: 7px;
+          margin-top: 10px;
           width: 100%;
           max-width: 255px;
           align-items: center;
@@ -220,5 +222,4 @@ function MainMatching(props) {
     </>
   );
 }
-
 export default MainMatching;
