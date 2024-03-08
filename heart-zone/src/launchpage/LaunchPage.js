@@ -6,7 +6,7 @@ function LaunchPage(props) {
       <div className="div">
         <img
           loading="lazy"
-          srcSet="..."
+          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
           className="img"
         />
         <img
@@ -32,7 +32,7 @@ function LaunchPage(props) {
         .div {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
-          max-width: 360px;
+          max-width: 100%;
           flex-direction: column;
           align-items: center;
           font-size: 18px;

@@ -41,15 +41,13 @@ function ProfileCreation(props) {
         .div {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
-          max-width: 360px;
+          max-width: 100%;
           padding-top: 6px;
           flex-direction: column;
         }
         .div-2 {
-          align-self: end;
-          z-index: 10;
+          align-self: center;
           display: flex;
-          margin-right: 32px;
           align-items: flex-start;
           gap: 17px;
         }

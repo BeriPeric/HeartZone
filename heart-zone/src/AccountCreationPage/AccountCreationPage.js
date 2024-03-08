@@ -1,6 +1,4 @@
 import './AccountCreationPage.css';
-import * as React from "react";
-
 
 const InputField = ({ label, type = 'text' }) => (
   <>
@@ -31,22 +29,21 @@ const AccountCreationPage = () => {
         .signup-section {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
-          max-width: 360px;
+          max-width: 100%;
           padding: 6px;
           flex-direction: column;
         }
 
         .images-header {
-          display: flex;
+          display: grid;
           margin-left: 14px;
-          width: 240px;
+          width: 100%;
           max-width: 100%;
-          justify-content: space-between;
+          justify-content: center;
           gap: 20px;
         }
 
         .icon, .logo {
-          object-fit: cover;
           width: auto;
         }
 
@@ -54,8 +51,8 @@ const AccountCreationPage = () => {
           aspect-ratio: 0.72;
           stroke-width: 3px;
           stroke: #a81c30;
-          border: 3px solid rgba(168, 28, 48, 1);
           margin-top: 10px;
+          position: absolute;
         }
 
         .logo {
