@@ -15,24 +15,13 @@ function ChatRoom(props) {
           <div className="div-3">
             <img
               loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0dda7-df7d-40b7-979d-53455dff91fc?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/a70c5ae88960138f4a485be4696a73e28601120eb275aaec5b1fad4e1f0ff601?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
               className="img-2"
             />
             <div className="div-4">Dakota, 20</div>
           </div>
           <div className="div-5">
             <div className="div-6">
-              <div className="div-7">
-                You are so breathtaking. Please talk to me!
-              </div>
-              <div className="div-8">
-                <img
-                  loading="lazy"
-                  srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f99795fc2e0fd7c34f9352a48daa63c9b91818e07269b5082c4a6625984c0ee?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-                  className="img-3"
-                />
-                <div className="div-9">Um....no! &gt;.&lt;</div>
-              </div>
             </div>
             <div className="div-10">
               <img
@@ -54,7 +43,7 @@ function ChatRoom(props) {
         .div {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
-          max-width: 360px;
+          max-width: 100%;
           padding-top: 16px;
           flex-direction: column;
         }
@@ -120,24 +109,7 @@ function ChatRoom(props) {
           font-weight: 300;
           padding: 0 9px;
         }
-        .div-7 {
-          font-family: Inter, sans-serif;
-          border-radius: 30px;
-          background-color: #fff;
-          justify-content: center;
-          padding: 10px 18px;
-        }
-        .div-8 {
-          align-self: center;
-          display: flex;
-          margin-top: 13px;
-          width: 100%;
-          max-width: 273px;
-          align-items: start;
-          justify-content: space-between;
-          gap: 20px;
-          white-space: nowrap;
-        }
+
         .img-3 {
           aspect-ratio: 1.19;
           object-fit: auto;
@@ -150,7 +122,7 @@ function ChatRoom(props) {
           border-radius: 30px;
           background-color: #fff;
           justify-content: center;
-          padding: 10px 11px;
+          padding: 10px 18px;
         }
         .div-10 {
           display: flex;

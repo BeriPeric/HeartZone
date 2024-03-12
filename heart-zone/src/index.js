@@ -7,7 +7,7 @@ import LaunchPage from './launchpage/LaunchPage';
 //import MainMatching from './MainMatching/MainMatching';
 //import Chats from './Chats/Chats';
 //import ChatRoom from './ChatRoom/ChatRoom';
-//import LoginPage from './LoginPage/LoginPage';
+import LoginPage from './LoginPage/LoginPage';
 //import Matches from './Matches/Matches';
 //import ProfileView from './ProfileView/ProfileView';
 
