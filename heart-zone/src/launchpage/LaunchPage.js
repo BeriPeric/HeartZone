@@ -1,6 +1,17 @@
 import './LaunchPage.css';
 
 function LaunchPage(props) {
+
+  const handleSignUpClick = () => {
+    // Handle sign up button click event
+    // You can add your logic here
+  };
+
+  const handleLoginClick = () => {
+    // Handle log in button click event
+    // You can add your logic here
+  };
+
   return (
     <>
       <div className="div">
@@ -20,12 +31,9 @@ function LaunchPage(props) {
         </div>
         <div className="div-3">cout&lt;&lt;”Looking for Love”;</div>
         <div className="div-4">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3c1211bcc8d28a601425dd2157a6c52208b85ec7887b02b40965ddf7eb58e14?"
-            className="img-3"
-          />
-          <div className="div-5">Log In</div>
+                  <button className="div-6" onClick={handleLoginClick}>Log In</button>
+                  <button className="div-5" onClick={handleSignUpClick}>Sign Up</button>
+          
         </div>
       </div>
       <style jsx>{`
@@ -76,23 +84,29 @@ function LaunchPage(props) {
           justify-content: space-between;
           gap: 20px;
         }
-        .img-3 {
-          aspect-ratio: 4.35;
-          object-fit: auto;
-          object-position: center;
-          width: 130px;
-          fill: linear-gradient(0deg, #a81c30 0%, #a81c30 100%),
-            linear-gradient(0deg, #a81c30 0%, #a81c30 100%), #a81c30;
-          max-width: 100%;
-        }
+        
         .div-5 {
           font-family: Inter, sans-serif;
+          font-size: 20px;
           border-radius: 30px;
           background-color: #fff;
           justify-content: center;
           flex-grow: 1;
           padding: 7px 40px;
         }
+
+        .div-6 {
+          font-family: Inter, sans-serif;
+          font-size: 20px;
+          border-radius: 30px;
+          border-color: #a81c30;
+          background-color: #a81c30;
+          justify-content: center;
+          color: white;
+          flex-grow: 1;
+          padding: 7px 40px;
+        }
+
       `}</style>
     </>
   );
