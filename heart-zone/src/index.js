@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import LaunchPage from './launchpage/LaunchPage';
+import LaunchPage from './launchpage/LaunchPage';
 //import AccountCreationPage from './AccountCreationPage/AccountCreationPage';
 //import ProfileCreation from './ProfileCreation/ProfileCreation';
 //import MainMatching from './MainMatching/MainMatching';
@@ -18,7 +18,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LoginPage/>
+    <LaunchPage />
   </React.StrictMode>
 );
 
