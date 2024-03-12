@@ -5,9 +5,9 @@ import './index.css';
 //import AccountCreationPage from './AccountCreationPage/AccountCreationPage';
 //import ProfileCreation from './ProfileCreation/ProfileCreation';
 //import MainMatching from './MainMatching/MainMatching';
-import Chats from './Chats/Chats';
+//import Chats from './Chats/Chats';
 //import ChatRoom from './ChatRoom/ChatRoom';
-//import LoginPage from './LoginPage/LoginPage';
+import LoginPage from './LoginPage/LoginPage';
 //import Matches from './Matches/Matches';
 //import ProfileView from './ProfileView/ProfileView';
 
@@ -18,7 +18,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Chats />
+    <LoginPage/>
   </React.StrictMode>
 );
 
