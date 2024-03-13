@@ -1,4 +1,5 @@
 import './AccountCreationPage.css';
+import ProfileCreation from '../ProfileCreation/ProfileCreation';
 
 const InputField = ({ label, type = 'text' }) => (
   <>
@@ -8,6 +9,11 @@ const InputField = ({ label, type = 'text' }) => (
 );
 
 const AccountCreationPage = () => {
+
+  const handleProfileCreation = () => {
+    window.location.href = '/ProfileCreation';
+  };
+
   return (
     <section className="signup-section">
       <header className="images-header">
@@ -16,13 +22,16 @@ const AccountCreationPage = () => {
       </header>
       <article className="form-container">
         <h1>Create a New Account</h1>
-        <p>Already registered? <a href="/login">Log in here.</a></p>
+        <p>Already registered? <a href = '/LoginPage'>Log in here.</a></p>
         <form>
           <InputField label="NAME" />
           <InputField label="EMAIL" type="email" />
           <InputField label="PASSWORD" type="password" />
           <InputField label="DATE OF BIRTH" type="date" />
-          <button type="submit" className="signup-button">Sign Up</button>
+          
+        <div className="signup-div">
+          <button className="signup-button" onClick={handleProfileCreation}>Sign Up</button>
+          </div>
         </form>
       </article>
       <style jsx>{`
@@ -98,7 +107,7 @@ const AccountCreationPage = () => {
           background-color: #d4d4d4;
         }
 
-        .signup-button {
+        .signup-div {
           display: block;
           width: 100%;
           margin-top: 26px;
@@ -109,6 +118,7 @@ const AccountCreationPage = () => {
           font-size: 18px;
           font-family: Inter, sans-serif;
         }
+
       `}</style>
     </section>
   );

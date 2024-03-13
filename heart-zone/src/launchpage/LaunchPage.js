@@ -1,13 +1,15 @@
 import './LaunchPage.css';
+import LoginPage from '../LoginPage/LoginPage';
+import AccountCreationPage from '../AccountCreationPage/AccountCreationPage';
 
 function LaunchPage(props) {
 
   const handleSignUpClick = () => {
-    window.open('https://www.google.com');
+    window.location.href = '/AccountCreationPage';
   };
 
   const handleLoginClick = () => {
-    window.open('https://www.google.com');
+    window.location.href = '/LoginPage';
   };
 
   return (
