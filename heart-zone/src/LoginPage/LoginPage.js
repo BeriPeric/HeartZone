@@ -14,8 +14,6 @@ export default function LoginPage() {
         .login-container {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
-          max-width: 100%;
-          padding: 6px;
           flex-direction: column;
         }
         .icons-container {
@@ -31,14 +29,12 @@ export default function LoginPage() {
           width: 18px;
           stroke-width: 3px;
           stroke: #a81c30;
+          border: 3px solid rgba(168, 28, 48, 1);
           margin-top: 10px;
         }
         .login-banner {
           width: 149px;
           max-width: 100%;
-          aspect-ratio: 1.18;
-          object-fit: auto;
-          object-position: center;
         }
         .form-section {
           border-radius: 100px 0px 0px 0px;
@@ -53,6 +49,7 @@ export default function LoginPage() {
         }
         .content-container {
           display: flex;
+          width: 100%;
           flex-direction: column;
           padding: 0 41px;
         }

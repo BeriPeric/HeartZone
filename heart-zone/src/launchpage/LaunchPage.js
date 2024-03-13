@@ -3,13 +3,11 @@ import './LaunchPage.css';
 function LaunchPage(props) {
 
   const handleSignUpClick = () => {
-    // Handle sign up button click event
-    // You can add your logic here
+    window.open('https://www.google.com');
   };
 
   const handleLoginClick = () => {
-    // Handle log in button click event
-    // You can add your logic here
+    window.open('https://www.google.com');
   };
 
   return (
@@ -31,9 +29,8 @@ function LaunchPage(props) {
         </div>
         <div className="div-3">cout&lt;&lt;”Looking for Love”;</div>
         <div className="div-4">
-                  <button className="div-6" onClick={handleLoginClick}>Log In</button>
-                  <button className="div-5" onClick={handleSignUpClick}>Sign Up</button>
-          
+          <button className="div-6" onClick={handleLoginClick}>Log In</button>
+          <button className="div-5" onClick={handleSignUpClick}>Sign Up</button>
         </div>
       </div>
       <style jsx>{`

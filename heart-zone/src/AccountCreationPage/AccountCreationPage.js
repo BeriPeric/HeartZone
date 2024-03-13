@@ -30,15 +30,12 @@ const AccountCreationPage = () => {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
           max-width: 100%;
-          padding: 6px;
           flex-direction: column;
         }
 
         .images-header {
           display: grid;
-          margin-left: 14px;
           width: 100%;
-          max-width: 100%;
           justify-content: center;
           gap: 20px;
         }
@@ -68,7 +65,7 @@ const AccountCreationPage = () => {
           flex-direction: column;
           font-size: 15px;
           color: #ababab;
-          padding: 34px 39px 60px;
+          padding: 10px;
         }
 
         h1, p, a {
