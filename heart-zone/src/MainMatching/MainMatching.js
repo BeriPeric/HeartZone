@@ -1,15 +1,38 @@
 import './MainMatching.css';
 import * as React from "react";
+import Chats from '../Chats/Chats';
+import Matches from '../Matches/Matches';
+import ProfileView from '../ProfileView/ProfileView';
+
 
 function MainMatching(props) {
+
+  const chatButton = () => {
+    window.location.href = '/Chat';
+  };
+
+  const mainMatchingButton = () => {
+    window.location.href = '/MainMatching';
+  };
+
+  const matchesButton = () => {
+    window.location.href = '/Matches';
+  };
+
+  const profileViewButton = () => {
+    window.location.href = '/ProfileView';
+  };
+
   return (
     <>
       <div className="div">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b65018ac533a5cb3e7291f70c7784c84adfec74c516aa0f555ce90aa442eb3de?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-          className="img"
-        />
+        <button className="profile-button" onClick={profileViewButton}>
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/b65018ac533a5cb3e7291f70c7784c84adfec74c516aa0f555ce90aa442eb3de?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+            className="img"
+          />
+        </button>
         <div className="div-2">
           <img
             loading="lazy"
@@ -27,7 +50,6 @@ function MainMatching(props) {
               <div className="div-6">
                 <div className="div-7">
                   Dakota, 20
-                  <br />
                 </div>
                 <div className="div-8">
                   <div className="div-9">CyberSec</div>
@@ -39,21 +61,27 @@ function MainMatching(props) {
           </div>
           <div className="div-12" />
           <div className="div-13">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/183a321dcaf3fe84f003ef2aa03dafe6c65abb5f4cf34a65f37b10a44eeef012?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-              className="img-4"
-            />
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-              className="img-5"
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1260858bd7f18fdb94df1b340f434ef48e79704e843537da96c4e21828fb8df6?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-              className="img-6"
-            />
+            <button onClick={chatButton}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/183a321dcaf3fe84f003ef2aa03dafe6c65abb5f4cf34a65f37b10a44eeef012?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+                className="img-4"
+              />
+            </button>
+            <button onClick={mainMatchingButton}>
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+                className="img-5" onclick="mainMatchingButton();"
+              />
+            </button>
+            <button onClick={matchesButton}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1260858bd7f18fdb94df1b340f434ef48e79704e843537da96c4e21828fb8df6?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+                className="img-6" onclick="matchesButton();"
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -64,14 +92,17 @@ function MainMatching(props) {
           max-width: 360px;
           padding-top: 14px;
           flex-direction: column;
+          align-items: center;
+        }
+        .profile-button {
+          width: 60px;
+          border: none;
+          align-self: start;
         }
         .img {
           aspect-ratio: 1.35;
-          object-fit: auto;
           object-position: center;
-          width: 34px;
           fill: #a81c30;
-          margin-left: 13px;
         }
         .div-2 {
           border-radius: 100px 0px 0px 0px;
@@ -101,10 +132,8 @@ function MainMatching(props) {
           align-self: stretch;
           position: relative;
           display: flex;
-          aspect-ratio: 0.72;
           margin-top: 10px;
           width: 100%;
-          padding-bottom: 37px;
           text-align: center;
         }
         .img-3 {
@@ -139,6 +168,8 @@ function MainMatching(props) {
         .div-7 {
           color: #fff;
           font: 500 25px Inter, sans-serif;
+          text-align: left;
+          padding: 5px;
         }
         .div-8 {
           display: flex;

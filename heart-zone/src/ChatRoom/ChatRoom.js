@@ -1,16 +1,24 @@
 import './ChatRoom.css';
 import * as React from "react";
+import Matches from '../Matches/Matches';
 
 
 function ChatRoom(props) {
+
+  const backButton = () => {
+    window.location.href = '/MainMatching';
+  };
+
   return (
     <>
       <div className="div">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-          className="img"
-        />
+        <button className="back-button" onClick={backButton}>
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+            className="img"
+          />
+        </button>
         <div className="div-2">
           <div className="div-3">
             <img
@@ -47,16 +55,18 @@ function ChatRoom(props) {
           padding-top: 16px;
           flex-direction: column;
         }
+        .back-button {
+          border: none;
+          align-self: start;
+        }
         .img {
           aspect-ratio: 0.72;
           object-fit: auto;
-          object-position: center;
           width: 18px;
           stroke-width: 3px;
           stroke: #a81c30;
           border-color: rgba(168, 28, 48, 1);
-          border-style: solid;
-          border-width: 3px;
+          border-style: none;
           margin-left: 14px;
         }
         .div-2 {

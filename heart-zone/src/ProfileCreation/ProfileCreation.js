@@ -99,7 +99,6 @@ function ProfileCreation(props) {
         }
         .img-3 {
           aspect-ratio: 1.04;
-          object-fit: auto;
           object-position: center;
           width: 55px;
           margin-top: 7px;

@@ -1,12 +1,27 @@
 import './Matches.css';
 import React from "react";
-
+import Chats from '../Chats/Chats';
+import ProfileView from '../ProfileView/ProfileView';
 
 function Avatar({ src, alt, className }) {
+  
   return <img src={src} alt={alt} className={className} loading="lazy" />;
 }
 
 function Matches() {
+
+  const chatButton = () => {
+    window.location.href = '/Chats';
+  };
+
+  const mainMatchingButton = () => {
+    window.location.href = '/MainMatching';
+  };
+
+  const matchesButton = () => {
+    window.location.href = '/Matches';
+  };
+
   const avatarsInfo = [
     { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/f787569b1bf44c4805215a438a664f49df5881ea4656463c0c60debf40a15710?apiKey=872a26b640bf4d309e24a74b10b52b7f&", alt: "Profile avatar" },
     { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a70c5ae88960138f4a485be4696a73e28601120eb275aaec5b1fad4e1f0ff601?apiKey=872a26b640bf4d309e24a74b10b52b7f&", alt: "Match avatar 1" },
@@ -22,71 +37,6 @@ function Matches() {
 
   return (
     <>
-      <style jsx>{`
-        .cardContainer {
-          background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
-          display: flex;
-          max-width: 100%;
-          padding-top: 46px;
-          flex-direction: column;
-        }
-        .cardContent {
-          border-radius: 100px 0px 0px 0px;
-          background-color: #fff;
-          display: flex;
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-        }
-        .avatarLarge {
-          aspect-ratio: 1.22;
-          object-fit: cover;
-          width: fit-content;
-        }
-        .matchesTitle {
-          color: #a81c30;
-          margin-top: 17px;
-          font: 400 25px/80% Inter, sans-serif;
-        }
-        .matchesContainer {
-          align-self: stretch;
-          display: flex;
-          margin-top: 18px;
-          width: 100%;
-          flex-direction: column;
-          padding: 0 8px;
-        }
-        .matchAvatar {
-          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-          background-color: #d6b29e;
-          display: flex;
-          margin-top: 24px;
-          flex-direction: column;
-          justify-content: center;
-          align-items: start;
-          padding: 4px 60px 4px 11px;
-        }
-        .avatarSmall {
-          aspect-ratio: 1;
-          object-fit: cover;
-          width: 55px;
-          border-radius: 50%;
-        }
-        .actionsContainer {
-          display: flex;
-          width: 141px;
-          max-width: 100%;
-          justify-content: space-between;
-          gap: 20px;
-          margin: 7px 0 0 50px;
-        }
-        .actionIcon {
-          aspect-ratio: 1;
-          object-fit: cover;
-          width: 55px;
-        }
-      `}</style>
-
       <div className="cardContainer">
         <div className="cardContent">
           <Avatar src={avatarsInfo[0].src} alt={avatarsInfo[0].alt} className="avatarLarge" />
@@ -100,11 +50,29 @@ function Matches() {
               </div>
             ))}
 
-            <div className="actionsContainer">
-              {avatarsInfo.slice(8).map((avatar, index) => (
-                <Avatar src={avatar.src} alt={avatar.alt} className="actionIcon" key={index} />
-              ))}
-            </div>
+            <div className="div-13">
+            <button onClick={chatButton}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/183a321dcaf3fe84f003ef2aa03dafe6c65abb5f4cf34a65f37b10a44eeef012?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+                className="img-4"
+              />
+            </button>
+            <button onClick={mainMatchingButton}>
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/db582ec88471777382aabb42ffa7215bd13293f5a85bab36caed37335eb93733?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+                className="img-5" onclick="mainMatchingButton();"
+              />
+            </button>
+            <button onClick={matchesButton}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1260858bd7f18fdb94df1b340f434ef48e79704e843537da96c4e21828fb8df6?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+                className="img-6" onclick="matchesButton();"
+              />
+            </button>
+          </div>
           </div>
         </div>
       </div>
