@@ -1,5 +1,7 @@
 import './LoginPage.css';
 import React from "react";
+import ProfileView from '../ProfileView/ProfileView';
+
 
 const Button = ({ text, onClick, className }) => (
   <button className={className} onClick={onClick}>
@@ -7,34 +9,44 @@ const Button = ({ text, onClick, className }) => (
   </button>
 );
 
-export default function LoginPage() {
+function LoginPage(props) {
+
+  const handleLoginClick = () => {
+    window.location.href = '/ProfileView';
+  };
   return (
     <>
       <style jsx>{`
         .login-container {
           background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
           display: flex;
+          max-width: 100%;
           flex-direction: column;
         }
-        .icons-container {
-          display: flex;
-          margin-left: 14px;
-          width: 240px;
-          max-width: 100%;
-          justify-content: space-between;
+
+        .images-header {
+          display: grid;
+          width: 100%;
+          justify-content: center;
           gap: 20px;
         }
-        .login-icon,
-        .decorative-icon {
-          width: 18px;
+
+        .icon, .logo {
+          width: auto;
+        }
+
+        .icon {
+          aspect-ratio: 0.72;
           stroke-width: 3px;
           stroke: #a81c30;
-          border: 3px solid rgba(168, 28, 48, 1);
           margin-top: 10px;
+          position: absolute;
         }
-        .login-banner {
-          width: 149px;
-          max-width: 100%;
+
+        .logo {
+          aspect-ratio: 1.18;
+        }
+   
         }
         .form-section {
           border-radius: 100px 0px 0px 0px;
@@ -105,10 +117,10 @@ export default function LoginPage() {
       `}</style>
 
       <section className="login-container">
-        <header className="icons-container">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="login-icon" />
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="Login Banner" className="login-banner" />
-        </header>
+        <header className="images-header">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="icon" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="logo" />
+      </header>
         <section className="form-section">
           <div className="content-container">
             <h1 className="title">Login</h1>
@@ -117,7 +129,7 @@ export default function LoginPage() {
             <input id="nameInput" className="input-field" type="text" aria-label="Enter your name" placeholder="Name" />
             <label htmlFor="passwordInput" className="input-label visually-hidden">PASSWORD</label>
             <input id="passwordInput" className="input-field" type="password" aria-label="Enter your password" placeholder="Password" />
-            <Button text="Sign Up" className="signup-button" />
+            <button text="Login" className="signup-button" onClick={handleLoginClick}>Login</button>
             <Button text="Forgot password? click here" className="forgot-password" />
           </div>
           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3ce8744aa54d8eb63f151402128b4a98faf98991df1f24b64ab22fde0dbfd1b?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="Footer Decorative" className="footer-image" />
@@ -126,3 +138,5 @@ export default function LoginPage() {
     </>
   );
 }
+
+export default LoginPage;
