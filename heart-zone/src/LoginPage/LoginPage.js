@@ -1,6 +1,6 @@
 import './LoginPage.css';
 import React from "react";
-import ProfileView from '../ProfileView/ProfileView';
+import MainMatching from '../MainMatching/MainMatching';
 
 
 const Button = ({ text, onClick, className }) => (
@@ -12,7 +12,7 @@ const Button = ({ text, onClick, className }) => (
 function LoginPage(props) {
 
   const handleLoginClick = () => {
-    window.location.href = '/ProfileView';
+    window.location.href = '/MainMatching';
   };
   return (
     <>
