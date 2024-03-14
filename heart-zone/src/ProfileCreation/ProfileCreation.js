@@ -40,6 +40,9 @@ function ProfileCreation(props) {
           <div className="div-12">SCHOOL</div>
           <div className="div-13" />
           <div className="div-14">
+
+        
+
             <button className="Save-button" onClick={handleSaveClick}>Save</button>
             </div>
         </div>
@@ -141,18 +144,32 @@ function ProfileCreation(props) {
           margin-top: 8px;
           height: 53px;
         }
-        .div-14 {
+        .Save-button {
           border-radius: 10px;
           background-color: #000;
           margin-top: 17px;
           justify-content: center;
           align-items: center;
           color: #fff;
+          width: 100%;
           white-space: nowrap;
           text-align: center;
           padding: 17px 60px;
           font: 18px Inter, sans-serif;
         }
+
+        .form-container {
+          border-radius: 100px 0px 0px 0px;
+          background-color: #fff;
+          display: flex;
+          margin-top: 32px;
+          width: 100%;
+          flex-direction: column;
+          font-size: 15px;
+          color: #ababab;
+          padding: 10px;
+        }
+
       `}</style>
     </>
   );

@@ -107,16 +107,21 @@ const AccountCreationPage = () => {
           background-color: #d4d4d4;
         }
 
-        .signup-div {
-          display: block;
-          width: 100%;
-          margin-top: 26px;
-          padding: 15px;
-          background-color: #000;
-          color: #fff;
-          border-radius: 10px;
-          font-size: 18px;
+        
+
+        .signup-button {
           font-family: Inter, sans-serif;
+          font-size: 20px;
+          font-color: white;
+          border-radius: 30px;
+          border-color: #a81c30;
+          justify-content: center;
+          width: 100%;
+          color: white;
+          flex-grow: 1;
+          padding: 7px 40px;
+          margin-top: 26px;
+          background-color: #000;
         }
 
       `}</style>
