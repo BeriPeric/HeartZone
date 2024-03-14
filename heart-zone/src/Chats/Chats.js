@@ -49,7 +49,7 @@ function Chats() {
           
           <div className="matchesContainer">
             {avatarsInfo.slice(1, 8).map((avatar, index) => (
-              <button class = "chatroom-button" onClick = {ChatRoom}>
+              <button class = "chatroom-button" onClick = {chatRoomButtom}>
                 <div className="matchAvatar" key={index}>
                   <Avatar src={avatar.src} alt={avatar.alt} className="avatarSmall" />
                 </div>
