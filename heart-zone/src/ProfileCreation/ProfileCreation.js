@@ -1,8 +1,13 @@
 import './ProfileCreation.css';
-
-import * as React from "react";
+//import React from "react";
+import ProfileView from '../ProfileView/ProfileView';
 
 function ProfileCreation(props) {
+
+  const handleSaveClick = () => {
+    window.location.href = '/ProfileView';
+  };
+
   return (
     <>
       <div className="div">
@@ -34,7 +39,9 @@ function ProfileCreation(props) {
           <div className="div-11" />
           <div className="div-12">SCHOOL</div>
           <div className="div-13" />
-          <div className="div-14">Save</div>
+          <div className="div-14">
+            <button className="Save-button" onClick={handleSaveClick}>Save</button>
+            </div>
         </div>
       </div>
       <style jsx>{`
