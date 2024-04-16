@@ -1,25 +1,39 @@
 import './ProfileCreation.css';
-//import React from "react";
 import ProfileView from '../ProfileView/ProfileView';
+import { useNavigate } from 'react-router-dom';
 
 function ProfileCreation(props) {
+  const navigate = useNavigate();
 
   const handleSaveClick = () => {
-    window.location.href = '/ProfileView';
+    navigate('/ProfileView');
+  };
+
+  const handleBack = () => {
+    navigate(-1, { replace: true });
   };
 
   return (
-    <>
+    <section className="signup-section">
       <div className="div">
+        <header className="images-header">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+            alt=""
+            className="icon"
+            onClick={handleBack}
+          />
+        </header>
         <div className="div-2">
           <img
             loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
             className="img"
           />
           <img
             loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0a1eee2ddca401cf32ddb22a135089de6e9e48ea256846ab1227af55ed610599?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
             className="img-2"
           />
         </div>
@@ -28,7 +42,7 @@ function ProfileCreation(props) {
           <div className="div-5">PHOTO</div>
           <img
             loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
             className="img-3"
           />
           <div className="div-6">GENDER</div>
@@ -40,11 +54,10 @@ function ProfileCreation(props) {
           <div className="div-12">SCHOOL</div>
           <div className="div-13" />
           <div className="div-14">
-
-        
-
-            <button className="Save-button" onClick={handleSaveClick}>Save</button>
-            </div>
+            <button className="Save-button" onClick={handleSaveClick}>
+              Save
+            </button>
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -169,8 +182,12 @@ function ProfileCreation(props) {
           padding: 10px;
         }
 
+        .images-header {
+          background-color: #f3e3d9;
+          padding: 10px;
+        }
       `}</style>
-    </>
+    </section>
   );
 }
 
