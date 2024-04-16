@@ -1,12 +1,13 @@
 import './ChatRoom.css';
 import * as React from "react";
+import Chats from '../Chats/Chats';
 import Matches from '../Matches/Matches';
 
 
 function ChatRoom(props) {
 
   const backButton = () => {
-    window.location.href = '/MainMatching';
+    window.location.href = '/Chats';
   };
 
   return (

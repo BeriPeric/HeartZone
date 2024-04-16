@@ -1,7 +1,7 @@
 import './LoginPage.css';
 import React from "react";
 import MainMatching from '../MainMatching/MainMatching';
-
+import { useNavigate } from 'react-router-dom';
 
 const Button = ({ text, onClick, className }) => (
   <button className={className} onClick={onClick}>
@@ -10,6 +10,12 @@ const Button = ({ text, onClick, className }) => (
 );
 
 function LoginPage(props) {
+
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   const handleLoginClick = () => {
     window.location.href = '/MainMatching';
@@ -118,7 +124,7 @@ function LoginPage(props) {
 
       <section className="login-container">
         <header className="images-header">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="icon" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="icon" onClick={handleBack}/>
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="logo" />
       </header>
         <section className="form-section">

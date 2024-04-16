@@ -8,7 +8,7 @@ import ProfileView from '../ProfileView/ProfileView';
 function MainMatching(props) {
 
   const chatButton = () => {
-    window.location.href = '/Chat';
+    window.location.href = '/Chats';
   };
 
   const mainMatchingButton = () => {
