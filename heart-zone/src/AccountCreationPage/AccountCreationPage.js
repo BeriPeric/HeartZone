@@ -3,12 +3,15 @@ import ProfileCreation from '../ProfileCreation/ProfileCreation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+
 const InputField = ({ label, type = 'text' }) => (
   <>
     <label htmlFor={label.toLowerCase()} className="input-label">{label}</label>
     <input type={type} id={label.toLowerCase()} className="input-field" />
   </>
 );
+
+
 
 const AccountCreationPage = () => {
   const navigate = useNavigate();
@@ -17,6 +20,15 @@ const AccountCreationPage = () => {
   const [password, setPassword] = useState('');
   const [date, setDate] = useState('');
 
+  const { AES, enc } = require('crypto-js');
+
+  const encryptWithAES = (password) => {
+    const passphrase = 'DakotaandBeriSmellBad';
+    return AES.encrypt(password, passphrase).toString();
+  };
+
+  const encryptedPassword = encryptWithAES('password', 'DakotaandBeriSmellBad');
+
   const handleBack = () => {
     navigate(-1);
   };
@@ -24,7 +36,7 @@ const AccountCreationPage = () => {
   const handleProfileCreation = () => {
       async function createProfile(){
         //encrypt password before sending info to Lambda via API endpoint
-        const body = { name, email, password, date };
+        const body = { name, email, encryptedPassword, date };
         const bucket = "heartzonedb";
         const file = "test/filename.txt";
         const method = "PUT";
