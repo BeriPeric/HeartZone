@@ -2,7 +2,14 @@ import './ProfileCreation.css';
 //import React from "react";
 import ProfileView from '../ProfileView/ProfileView';
 
-function ProfileCreation(props) {
+const InputField = ({ label, type = 'text' }) => (
+  <>
+    <label htmlFor={label.toLowerCase()} className="input-label">{label}</label>
+    <input type={type} id={label.toLowerCase()} className="input-field" />
+  </>
+);
+
+const ProfileCreation = () => {
 
   const handleSaveClick = () => {
     window.location.href = '/ProfileView';
@@ -26,25 +33,42 @@ function ProfileCreation(props) {
         <div className="div-3">
           <div className="div-4">Create Your Profile</div>
           <div className="div-5">PHOTO</div>
-          <img
-            loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-            className="img-3"
+      
+          <input type="file" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .png"></input>
+          <label for="fileInput">
+              <img srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
           />
-          <div className="div-6">GENDER</div>
-          <div className="div-7" />
-          <div className="div-8">MAJOR</div>
-          <div className="div-9" />
-          <div className="div-10">PROFESSION</div>
-          <div className="div-11" />
-          <div className="div-12">SCHOOL</div>
-          <div className="div-13" />
-          <div className="div-14">
-
+          </label>
+        
         
 
-            <button className="Save-button" onClick={handleSaveClick}>Save</button>
-            </div>
+        <form>
+          <label for="GENDER">CHOOSE YOUR GENDER:</label>
+          <select id="GENDER" name="GENDER">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="MAJOR">CHOOSE YOUR MAJOR:</label>
+          <select id="MAJOR" name="MAJOR">
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="other">Other</option>
+
+          </select>
+
+          <InputField label="PROFESSION" type="profession" />
+          <InputField label="SCHOOL" type="school" />
+          
+        <div className="save-div">
+          <button className="Save-button" onClick={handleSaveClick}>Save</button>
+          </div>
+        </form>
+
         </div>
       </div>
       <style jsx>{`
@@ -155,6 +179,29 @@ function ProfileCreation(props) {
           text-align: center;
           padding: 17px 60px;
           font: 18px Inter, sans-serif;
+        }
+
+        .input-label {
+          display: block;
+          margin-top: 21px;
+        }
+
+        .input-field {
+          display: block;
+          width: 100%;
+          margin-top: 8px;
+          padding: 15px;
+          border-radius: 15px;
+          background-color: #d4d4d4;
+        }
+
+        .label-field {
+          display: block;
+          width: 100%;
+          margin-top: 8px;
+          padding: 15px;
+          border-radius: 15px;
+          background-color: #d4d4d4;
         }
 
         .form-container {
