@@ -1,6 +1,7 @@
 import './AccountCreationPage.css';
 import ProfileCreation from '../ProfileCreation/ProfileCreation';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const InputField = ({ label, type = 'text' }) => (
   <>
@@ -10,16 +11,44 @@ const InputField = ({ label, type = 'text' }) => (
 );
 
 const AccountCreationPage = () => {
-
-  const handleProfileCreation = () => {
-    window.location.href = '/ProfileCreation';
-  };
-
   const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [date, setDate] = useState('');
 
   const handleBack = () => {
     navigate(-1);
   };
+
+  const handleProfileCreation = () => {
+      async function createProfile(){
+        //encrypt password before sending info to Lambda via API endpoint
+        const body = { name, email, password, date };
+        const bucket = "heartzonedb";
+        const file = "test/filename.txt";
+        const method = "PUT";
+        const url = `https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/${bucket}?file=${file}&method=${method}`;
+
+        const requestOptions = {
+          method: "PUT",
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(body),
+        };
+
+        try {
+          const response = await fetch(url, requestOptions);
+          if (!response.ok) {
+            throw new Error('Failed to create account');
+          }
+          const data = await response.json();
+          console.log(data);
+          navigate('/ProfileCreation');
+        } catch (error) {
+          console.error('Error creating account:', error);
+        }
+      }
+  }
 
   return (
     <section className="signup-section">
@@ -30,14 +59,13 @@ const AccountCreationPage = () => {
       <article className="form-container">
         <h1>Create a New Account</h1>
         <p>Already registered? <a href = '/LoginPage'>Log in here.</a></p>
-        <form>
-          <InputField label="NAME" />
-          <InputField label="EMAIL" type="email" />
-          <InputField label="PASSWORD" type="password" />
-          <InputField label="DATE OF BIRTH" type="date" />
-          
-        <div className="signup-div">
-          <button className="signup-button" onClick={handleProfileCreation}>Sign Up</button>
+        <form onSubmit={handleProfileCreation}>
+          <InputField label="NAME" value={name} onChange={(e) => setName(e.target.value)}/>
+          <InputField label="EMAIL" type="email" value={email} onChange={(e) => setName(e.target.value)}/>
+          <InputField label="PASSWORD" type="password" value={password} onChange={(e) => setName(e.target.value)}/>
+          <InputField label="DATE OF BIRTH" type="date" value={date} onChange={(e) => setName(e.target.value)}/>
+          <div className="signup-div">
+            <button className="signup-button" onClick={handleProfileCreation}>Sign Up</button>
           </div>
         </form>
       </article>
