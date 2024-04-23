@@ -2,30 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
-import LaunchPage from '../dir/launchpage/LaunchPage';
-import AccountCreationPage from '../dir/AccountCreationPage/AccountCreationPage';
-import ProfileCreation from '../dir/ProfileCreation/ProfileCreation';
-import MainMatching from '../dir/MainMatching/MainMatching';
-import Chats from '../dir/Chats/Chats';
-import ChatRoom from '../dir/ChatRoom/ChatRoom';
-import LoginPage from '../dir/LoginPage/LoginPage';
-import Matches from '../dir/Matches/Matches';
-import ProfileView from '../dir/ProfileView/ProfileView';
-import reportWebVitals from '../dir/reportWebVitals';
+import * as dirs from './dirs/import-dirs.js'
+import reportWebVitals from './reportWebVitals';
 
 //Routes to different pages of our app
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/" element={<LaunchPage />} />
-      <Route path="/accountcreationpage" element={<AccountCreationPage />} />
-      <Route path="/profilecreation" element={<ProfileCreation />} />
-      <Route path="/mainmatching" element={<MainMatching />} />
-      <Route path="/chats" element={<Chats />} />
-      <Route path="/chatroom" element={<ChatRoom />} />
-      <Route path="/loginpage" element={<LoginPage />} />
-      <Route path="/matches" element={<Matches />} />
-      <Route path="/profileview" element={<ProfileView />} />
+      <Route path="/" element={<dirs.LaunchPage />} />
+      <Route path="/accountcreationpage" element={<dirs.AccountCreationPage />} />
+      <Route path="/profilecreation" element={<dirs.ProfileCreation />} />
+      <Route path="/mainmatching" element={<dirs.MainMatching />} />
+      <Route path="/chats" element={<dirs.Chats />} />
+      <Route path="/chatroom" element={<dirs.ChatRoom />} />
+      <Route path="/loginpage" element={<dirs.LoginPage />} />
+      <Route path="/matches" element={<dirs.Matches />} />
+      <Route path="/profileview" element={<dirs.ProfileView />} />
     </Routes>
   </Router>,
 
