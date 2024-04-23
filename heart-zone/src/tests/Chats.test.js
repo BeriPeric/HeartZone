@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ProfileCreation from './Chats';
+import ProfileCreation from '../dirs/Chats/Chats';
 
 test('renders learn react link', () => {
   render(<ProfileCreation />);

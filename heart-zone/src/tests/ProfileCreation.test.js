@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ProfileCreation from './ProfileCreation';
+import ProfileCreation from '../dirs/ProfileCreation/ProfileCreation';
 
 test('renders learn react link', () => {
   render(<ProfileCreation />);
