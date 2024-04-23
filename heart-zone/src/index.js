@@ -2,30 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
-import LaunchPage from './launchpage/LaunchPage';
-import AccountCreationPage from './AccountCreationPage/AccountCreationPage';
-import ProfileCreation from './ProfileCreation/ProfileCreation';
-import MainMatching from './MainMatching/MainMatching';
-import Chats from './Chats/Chats';
-import ChatRoom from './ChatRoom/ChatRoom';
-import LoginPage from './LoginPage/LoginPage';
-import Matches from './Matches/Matches';
-import ProfileView from './ProfileView/ProfileView';
+import * as dirs from './dirs/import-dirs.js'
 import reportWebVitals from './reportWebVitals';
 
 //Routes to different pages of our app
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/" element={<LaunchPage />} />
-      <Route path="/accountcreationpage" element={<AccountCreationPage />} />
-      <Route path="/profilecreation" element={<ProfileCreation />} />
-      <Route path="/mainmatching" element={<MainMatching />} />
-      <Route path="/chats" element={<Chats />} />
-      <Route path="/chatroom" element={<ChatRoom />} />
-      <Route path="/loginpage" element={<LoginPage />} />
-      <Route path="/matches" element={<Matches />} />
-      <Route path="/profileview" element={<ProfileView />} />
+      <Route path="/" element={<dirs.LaunchPage />} />
+      <Route path="/accountcreationpage" element={<dirs.AccountCreationPage />} />
+      <Route path="/profilecreation" element={<dirs.ProfileCreation />} />
+      <Route path="/mainmatching" element={<dirs.MainMatching />} />
+      <Route path="/chats" element={<dirs.Chats />} />
+      <Route path="/chatroom" element={<dirs.ChatRoom />} />
+      <Route path="/loginpage" element={<dirs.LoginPage />} />
+      <Route path="/matches" element={<dirs.Matches />} />
+      <Route path="/profileview" element={<dirs.ProfileView />} />
     </Routes>
   </Router>,
 

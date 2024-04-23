@@ -1,0 +1,135 @@
+.LoginPage {
+  text-align: center;
+}
+
+.LoginPage-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .LoginPage {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.LoginPage-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.LoginPage-link {
+  color: #61dafb;
+}
+
+@keyframes LoginPage-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-container {
+  background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+}
+
+.images-header {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon, .logo {
+  width: auto;
+}
+
+.icon {
+  aspect-ratio: 0.72;
+  stroke-width: 3px;
+  stroke: #a81c30;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.logo {
+  aspect-ratio: 1.18;
+}
+
+.form-section {
+  border-radius: 100px 0px 0px 0px;
+  background-color: #fff;
+  display: flex;
+  margin-top: 32px;
+  width: 100%;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 34px 0 16px;
+}
+.content-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 41px;
+}
+.title {
+  color: #a81c30;
+  text-align: center;
+  align-self: center;
+  font: 35px Inter, sans-serif;
+}
+.subtitle {
+  color: #584b4d;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  align-self: center;
+}
+.input-label {
+  color: #ababab;
+  font-family: Inter, sans-serif;
+  margin-top: 4px;
+}
+.input-field {
+  border-radius: 15px;
+  background-color: #d4d4d4;
+  margin-top: 7px;
+  height: 53px;
+}
+.signup-button,
+.forgot-password {
+  margin-top: 28px;
+  color: #fff;
+  text-align: center;
+  padding: 15px 60px;
+  font: 18px Inter, sans-serif;
+}
+.signup-button {
+  background-color: #000;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.forgot-password {
+  background-color: transparent;
+  color: #584b4d;
+  font-weight: 300;
+  margin-top: 43px;
+}
+.footer-image {
+  width: 151px;
+  max-width: 100%;
+  margin: 94px 0 0 21px;
+}
