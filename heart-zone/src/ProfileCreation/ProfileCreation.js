@@ -61,8 +61,21 @@ const ProfileCreation = () => {
 
           </select>
 
-          <InputField label="PROFESSION" type="profession" />
-          <InputField label="SCHOOL" type="school" />
+          <InputField label="PROFESSION" type="text" value={profession} onChange={(e) => {
+            const input = e.target.value;
+            // Remove non-alphabetic characters using a regular expression
+            const alphabeticValue = input.replace(/[^A-Za-z]/g, '');
+            // Update the state with only alphabetic characters
+            setProfession(alphabeticValue);
+            }}/>
+
+          <InputField label="SCHOOL" type="school" value={school} onChange={(e) => {
+            const input = e.target.value;
+            // Remove non-alphabetic characters using a regular expression
+            const alphabeticValue = input.replace(/[^A-Za-z]/g, '');
+            // Update the state with only alphabetic characters
+            setProfession(alphabeticValue);
+            }}/>
           
         <div className="save-div">
           <button className="Save-button" onClick={handleSaveClick}>Save</button>

@@ -3,14 +3,12 @@ import ProfileCreation from '../ProfileCreation/ProfileCreation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-
 const InputField = ({ label, type = 'text' }) => (
   <>
     <label htmlFor={label.toLowerCase()} className="input-label">{label}</label>
     <input type={type} id={label.toLowerCase()} className="input-field" />
   </>
 );
-
 
 
 const AccountCreationPage = () => {
@@ -72,10 +70,31 @@ const AccountCreationPage = () => {
         <h1>Create a New Account</h1>
         <p>Already registered? <a href = '/LoginPage'>Log in here.</a></p>
         <form onSubmit={handleProfileCreation}>
-          <InputField label="NAME" value={name} onChange={(e) => setName(e.target.value)}/>
+
+          <InputField label="NAME" value={name} onChange={(e) => {
+            const input = e.target.value;
+            // Remove non-alphabetic characters using a regular expression
+            const alphabeticValue = input.replace(/[^A-Za-z]/g, '');
+            // Update the state with only alphabetic characters
+            setName(alphabeticValue);}}/>
+
           <InputField label="EMAIL" type="email" value={email} onChange={(e) => setName(e.target.value)}/>
-          <InputField label="PASSWORD" type="password" value={password} onChange={(e) => setName(e.target.value)}/>
-          <InputField label="DATE OF BIRTH" type="date" value={date} onChange={(e) => setName(e.target.value)}/>
+          <InputField label="PASSWORD" type="password" value={password} onChange={(e) => {
+            const input = e.target.value;
+            // Check if the input meets the password requirements
+            const isValidPassword = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(input);
+            if (isValidPassword || input === '') {
+            setPassword(input);}}}/>
+
+          <InputField label="DATE OF BIRTH" type="text" 
+            // Change type to text
+            value={date} onChange={(e) => {
+            const input = e.target.value;
+            // Remove non-numeric characters
+            const numericValue = input.replace(/\D/g, '');
+            // Update the state with only numeric characters
+            setDate(numericValue);}}/>
+            
           <div className="signup-div">
             <button className="signup-button" onClick={handleProfileCreation}>Sign Up</button>
           </div>
@@ -176,5 +195,6 @@ const AccountCreationPage = () => {
   );
 }
 
-
 export default AccountCreationPage;
+
+
