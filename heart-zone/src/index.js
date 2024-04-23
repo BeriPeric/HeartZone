@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
-import LaunchPage from './launchpage/LaunchPage';
-import AccountCreationPage from './AccountCreationPage/AccountCreationPage';
-import ProfileCreation from './ProfileCreation/ProfileCreation';
-import MainMatching from './MainMatching/MainMatching';
-import Chats from './Chats/Chats';
-import ChatRoom from './ChatRoom/ChatRoom';
-import LoginPage from './LoginPage/LoginPage';
-import Matches from './Matches/Matches';
-import ProfileView from './ProfileView/ProfileView';
-import reportWebVitals from './reportWebVitals';
+import LaunchPage from '../dir/launchpage/LaunchPage';
+import AccountCreationPage from '../dir/AccountCreationPage/AccountCreationPage';
+import ProfileCreation from '../dir/ProfileCreation/ProfileCreation';
+import MainMatching from '../dir/MainMatching/MainMatching';
+import Chats from '../dir/Chats/Chats';
+import ChatRoom from '../dir/ChatRoom/ChatRoom';
+import LoginPage from '../dir/LoginPage/LoginPage';
+import Matches from '../dir/Matches/Matches';
+import ProfileView from '../dir/ProfileView/ProfileView';
+import reportWebVitals from '../dir/reportWebVitals';
 
 //Routes to different pages of our app
 ReactDOM.render(
