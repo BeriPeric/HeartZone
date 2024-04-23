@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import AccountCreationPage from './AccountCreationPage';
+import ProfileView from '../dirs/ProfileView/ProfileView';
 
 test('renders learn react link', () => {
-  render(<AccountCreationPage />);
+  render(<ProfileView />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
