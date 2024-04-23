@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ProfileView from './ProfileView';
+import ProfileView from '../dirs/ProfileView';
 
 test('renders learn react link', () => {
   render(<ProfileView />);
