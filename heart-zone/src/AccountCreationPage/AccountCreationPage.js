@@ -60,7 +60,16 @@ const AccountCreationPage = () => {
         <h1>Create a New Account</h1>
         <p>Already registered? <a href = '/LoginPage'>Log in here.</a></p>
         <form onSubmit={handleProfileCreation}>
-          <InputField label="NAME" value={name} onChange={(e) => setName(e.target.value)}/>
+
+
+
+         <InputField label="NAME" value={name} onChange={(e) => {
+            const input = e.target.value;
+            const sanitizedInput = input.replace(/[^A-Za-z]/ig, ''); // Remove non-alphabetic characters
+              setName(sanitizedInput);
+          }}
+          />
+
           <InputField label="EMAIL" type="email" value={email} onChange={(e) => setName(e.target.value)}/>
           <InputField label="PASSWORD" type="password" value={password} onChange={(e) => setName(e.target.value)}/>
           <InputField label="DATE OF BIRTH" type="date" value={date} onChange={(e) => setName(e.target.value)}/>

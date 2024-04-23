@@ -2,12 +2,20 @@ import './ProfileCreation.css';
 //import React from "react";
 import ProfileView from '../ProfileView/ProfileView';
 
+
+const Button = ({ text, onClick, className }) => (
+  <button className={className} onClick={onClick}>
+    {text}
+  </button>
+);
+
 const InputField = ({ label, type = 'text' }) => (
   <>
     <label htmlFor={label.toLowerCase()} className="input-label">{label}</label>
     <input type={type} id={label.toLowerCase()} className="input-field" />
   </>
 );
+
 
 const ProfileCreation = () => {
 
@@ -33,15 +41,23 @@ const ProfileCreation = () => {
         <div className="div-3">
           <div className="div-4">Create Your Profile</div>
           <div className="div-5">PHOTO</div>
-      
-          <input type="file" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .png"></input>
-          <label for="fileInput">
-              <img srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
-          />
-          </label>
-        
-        
+          <label htmlFor="fileUpload" className="file-upload-button">
+            <img srcSet="
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=100 100w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=200 200w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=400 400w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=800 800w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1200 1200w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=1600 1600w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&width=2000 2000w, 
+            https://cdn.builder.io/api/v1/image/assets/TEMP/ef74faa8-aca0-4292-95eb-693493cf1f1f?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+          alt="Choose File"
+          className="file-upload-image"
+        />
+        </label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .png" style={{ display: 'none' }} />
 
+    
         <form>
           <label for="GENDER">CHOOSE YOUR GENDER:</label>
           <select id="GENDER" name="GENDER">
@@ -49,6 +65,9 @@ const ProfileCreation = () => {
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
+
+          <InputField label="PROFESSION" type="profession" />
+
 
           <label for="MAJOR">CHOOSE YOUR MAJOR:</label>
           <select id="MAJOR" name="MAJOR">
@@ -58,16 +77,22 @@ const ProfileCreation = () => {
             <option value="Data Science">Data Science</option>
             <option value="Information Technology">Information Technology</option>
             <option value="other">Other</option>
-
           </select>
 
-          <InputField label="PROFESSION" type="profession" />
           <InputField label="SCHOOL" type="school" />
-          
-        <div className="save-div">
-          <button className="Save-button" onClick={handleSaveClick}>Save</button>
-          </div>
-        </form>
+
+          <label for="COMPUTER OPERATING SYSTEM">CHOOSE YOUR FAVORITE COMPUTER OS:</label>
+          <select id="OS" name="OS">
+            <option value="Windows">Windows</option>
+            <option value="macOS">macOS</option>
+            <option value="Linux">Linux</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button text="Save" className="Save-button" onClick={handleSaveClick}>Save</button>
+
+          </form>
+
 
         </div>
       </div>
@@ -107,6 +132,8 @@ const ProfileCreation = () => {
           display: flex;
           width: 100%;
           flex-direction: column;
+          margin-top: 15px;
+          margin-botton: 15px;
           font-size: 15px;
           color: #ababab;
           font-weight: 400;
@@ -120,6 +147,7 @@ const ProfileCreation = () => {
         .div-5 {
           font-family: Inter, sans-serif;
           margin-top: 11px;
+          margin-bottom: 11px;
         }
         .img-3 {
           aspect-ratio: 1.04;
@@ -190,6 +218,7 @@ const ProfileCreation = () => {
           display: block;
           width: 100%;
           margin-top: 8px;
+          margin-bottom: 12px;
           padding: 15px;
           border-radius: 15px;
           background-color: #d4d4d4;
