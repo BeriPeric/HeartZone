@@ -24,11 +24,9 @@ const AccountCreationPage = () => {
   const handleProfileCreation = () => {
       async function createProfile(){
         //encrypt password before sending info to Lambda via API endpoint
+        const bucket = 'heartzonedb';
         const body = { name, email, password, date };
-        const bucket = "heartzonedb";
-        const file = "test/filename.txt";
-        const method = "PUT";
-        const url = `https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/${bucket}?file=${file}&method=${method}`;
+        const url = `https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/${bucket}`;
 
         const requestOptions = {
           method: "PUT",
@@ -81,6 +79,5 @@ const AccountCreationPage = () => {
     </section>
   );
 }
-
 
 export default AccountCreationPage;
