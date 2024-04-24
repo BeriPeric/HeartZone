@@ -49,12 +49,12 @@ const AccountCreationPage = () => {
   }
 
   return (
-    <section className="signup-section">
+    <section className="signup-section-account">
       <header className="images-header">
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1768e2983050c9c5cd8f815fcacc75eeee06121531f87c96613fde70f191d83?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="icon" onClick={handleBack}/>
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f5798c23f51c89fa83f6ea25c71b05be94b27b9aba4c6f5624bf8b32a6d20e0?apiKey=872a26b640bf4d309e24a74b10b52b7f&" alt="" className="logo" />
       </header>
-      <article className="form-container">
+      <article className="form-container-account">
         <h1>Create a New Account</h1>
         <p>Already registered? <a href = '/LoginPage'>Log in here.</a></p>
         <form onSubmit={handleProfileCreation}>
@@ -71,8 +71,8 @@ const AccountCreationPage = () => {
           <InputField label="EMAIL" type="email" value={email} onChange={(e) => setName(e.target.value)}/>
           <InputField label="PASSWORD" type="password" value={password} onChange={(e) => setName(e.target.value)}/>
           <InputField label="DATE OF BIRTH" type="date" value={date} onChange={(e) => setName(e.target.value)}/>
-          <div className="signup-div">
-            <button className="signup-button" onClick={handleProfileCreation}>Sign Up</button>
+          <div className="signup-div-account">
+            <button className="signup-button-account" onClick={handleProfileCreation}>Sign Up</button>
           </div>
         </form>
       </article>

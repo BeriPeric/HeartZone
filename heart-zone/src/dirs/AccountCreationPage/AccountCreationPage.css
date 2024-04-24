@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .AccountCreationPage {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .AccountCreationPage {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,16 +22,7 @@
   color: #61dafb;
 }
 
-@keyframes Acc-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.signup-section {
+.signup-section-account {
   background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
   display: flex;
   max-width: 100%;
@@ -67,7 +52,7 @@
   aspect-ratio: 1.18;
 }
 
-.form-container {
+.form-container-account {
   border-radius: 100px 0px 0px 0px;
   background-color: #fff;
   display: flex;
@@ -95,12 +80,12 @@ a {
   font-weight: bold;
 }
 
-.input-label {
+.input-label-account {
   display: block;
   margin-top: 21px;
 }
 
-.input-field {
+.input-field-account {
   display: block;
   width: 100%;
   margin-top: 8px;
@@ -111,7 +96,7 @@ a {
 
 
 
-.signup-button {
+.signup-button-account {
   font-family: Inter, sans-serif;
   font-size: 20px;
   font-color: white;

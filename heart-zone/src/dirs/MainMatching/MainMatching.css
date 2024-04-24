@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .MainMatching {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .MainMatching-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,16 +22,7 @@
   color: #61dafb;
 }
 
-@keyframes MainMatching-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.div {
+.div-match {
   background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
   display: flex;
   max-width: 360px;
@@ -50,12 +35,12 @@
   border: none;
   align-self: start;
 }
-.img {
+.img-match {
   aspect-ratio: 1.35;
   object-position: center;
   fill: #a81c30;
 }
-.div-2 {
+.div-2-match {
   border-radius: 100px 0px 0px 0px;
   background-color: #fff;
   display: flex;
@@ -65,18 +50,18 @@
   align-items: center;
   padding: 9px 20px;
 }
-.img-2 {
+.img-2-match {
   aspect-ratio: 1.22;
   object-fit: auto;
   object-position: center;
   width: 72px;
 }
-.div-3 {
+.div-3-match {
   color: #a81c30;
   margin-top: 17px;
   font: 400 25px/80% Inter, sans-serif;
 }
-.div-4 {
+.div-4-match {
   disply: flex;
   flex-direction: column;
   overflow: hidden;
@@ -87,7 +72,7 @@
   width: 100%;
   text-align: center;
 }
-.img-3 {
+.img-3-match {
   position: absolute;
   inset: 0;
   height: 100%;
@@ -95,7 +80,7 @@
   object-fit: cover;
   object-position: center;
 }
-.div-5 {
+.div-5-match {
   position: relative;
   background: linear-gradient(
     180deg,
@@ -109,20 +94,20 @@
   gap: 20px;
   padding: 80px 66px 0 11px;
 }
-.div-6 {
+.div-6-match {
   display: flex;
   margin-top: 306px;
   flex-direction: column;
   flex-grow: 1;
   flex-basis: 0%;
 }
-.div-7 {
+.div-7-match {
   color: #fff;
   font: 500 25px Inter, sans-serif;
   text-align: left;
   padding: 5px;
 }
-.div-8 {
+.div-8-match {
   display: flex;
   margin-top: 13px;
   gap: 13px;
@@ -131,14 +116,14 @@
   font-weight: 400;
   white-space: nowrap;
 }
-.div-9 {
+.div-9-match {
   font-family: Inter, sans-serif;
   border-radius: 55px 55px 0px 0px;
   background-color: #4d91f6;
   flex-grow: 1;
   padding: 7px 21px 1px;
 }
-.div-10 {
+.div-10-match {
   font-family: Inter, sans-serif;
   border-radius: 55px 55px 0px 0px;
   background-color: #e9be23;
@@ -146,7 +131,7 @@
   flex-grow: 1;
   padding: 6px 11px;
 }
-.div-11 {
+.div-11-match {
   border-radius: 55px 55px 0px 0px;
   background-color: #6b37ff;
   margin-top: 341px;
@@ -156,12 +141,12 @@
   padding: 6px 19px;
   font: 400 15px Inter, sans-serif;
 }
-.div-12 {
+.div-12-match {
   background-color: #efd8cb;
   align-self: stretch;
   height: 126px;
 }
-.div-13 {
+.div-13-match {
   display: flex;
   margin-top: 10px;
   width: 100%;
@@ -170,7 +155,7 @@
   justify-content: space-between;
   gap: 20px;
 }
-.img-4 {
+.img-4-match {
   aspect-ratio: 1.14;
   object-fit: auto;
   object-position: center;
@@ -184,14 +169,14 @@
   flex: 1;
   margin: auto 0;
 }
-.img-5 {
+.img-5-match {
   aspect-ratio: 0.79;
   object-fit: auto;
   object-position: center;
   width: 100%;
   flex: 1;
 }
-.img-6 {
+.img-6-match {
   aspect-ratio: 1.23;
   object-fit: auto;
   object-position: center;

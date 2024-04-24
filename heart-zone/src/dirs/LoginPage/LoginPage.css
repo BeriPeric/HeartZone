@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .LoginPage {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .LoginPage-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -26,15 +20,6 @@
 
 .LoginPage-link {
   color: #61dafb;
-}
-
-@keyframes LoginPage-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .login-container {
@@ -67,7 +52,7 @@
   aspect-ratio: 1.18;
 }
 
-.form-section {
+.form-section-login {
   border-radius: 100px 0px 0px 0px;
   background-color: #fff;
   display: flex;
@@ -78,19 +63,19 @@
   font-weight: 400;
   padding: 34px 0 16px;
 }
-.content-container {
+.content-container-login {
   display: flex;
   width: 100%;
   flex-direction: column;
   padding: 0 41px;
 }
-.title {
+.title-login {
   color: #a81c30;
   text-align: center;
   align-self: center;
   font: 35px Inter, sans-serif;
 }
-.subtitle {
+.subtitle-login {
   color: #584b4d;
   text-align: center;
   font-family: Inter, sans-serif;
@@ -102,13 +87,13 @@
   font-family: Inter, sans-serif;
   margin-top: 4px;
 }
-.input-field {
+.input-field-login {
   border-radius: 15px;
   background-color: #d4d4d4;
   margin-top: 7px;
   height: 53px;
 }
-.signup-button,
+.signup-button-login,
 .forgot-password {
   margin-top: 28px;
   color: #fff;
@@ -116,7 +101,7 @@
   padding: 15px 60px;
   font: 18px Inter, sans-serif;
 }
-.signup-button {
+.signup-button-login {
   background-color: #000;
   border-radius: 10px;
   justify-content: center;

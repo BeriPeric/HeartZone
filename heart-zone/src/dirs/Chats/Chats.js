@@ -41,13 +41,13 @@ function Chats() {
 
   return (
     <>
-      <div className="cardContainer">
-        <div className="cardContent">
+      <div className="cardContainer-chats">
+        <div className="cardContent-chats">
           <Avatar src={avatarsInfo[0].src} alt={avatarsInfo[0].alt} className="avatarLarge" />
 
           <h2 className="matchesTitle">Chats</h2>
           
-          <div className="matchesContainer">
+          <div className="matchesContainer-chats">
             {avatarsInfo.slice(1, 8).map((avatar, index) => (
               <button class = "chatroom-button" onClick = {chatRoomButtom}>
                 <div className="matchAvatar" key={index}>
@@ -56,7 +56,7 @@ function Chats() {
               </button>
             ))}
 
-            <div className="div-13">
+            <div className="div-13-chats">
             <button>
               <img
                 loading="lazy"

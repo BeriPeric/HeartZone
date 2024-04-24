@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .ChatRoom {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .ChatRoom-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,16 +22,7 @@
   color: #61dafb;
 }
 
-@keyframes ChatRoom-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.div {
+.div-chatroom {
   background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
   display: flex;
   max-width: 100%;
@@ -48,7 +33,7 @@
   border: none;
   align-self: start;
 }
-.img {
+.img-chatroom {
   aspect-ratio: 0.72;
   object-fit: auto;
   width: 18px;
@@ -58,7 +43,7 @@
   border-style: none;
   margin-left: 14px;
 }
-.div-2 {
+.div-2-chatroom {
   border-radius: 100px 0px 0px 0px;
   background-color: #fff;
   display: flex;
@@ -67,7 +52,7 @@
   flex-direction: column;
   padding: 22px 8px;
 }
-.div-3 {
+.div-3-chatroom {
   align-self: start;
   display: flex;
   margin-left: 22px;
@@ -78,28 +63,28 @@
   white-space: nowrap;
   line-height: 80%;
 }
-.img-2 {
+.img-2-chatroom {
   aspect-ratio: 1.33;
   object-fit: auto;
   object-position: center;
   width: 132px;
-  fill: url(<path-to-image>),
+  fill: url(https://cdn.builder.io/api/v1/image/assets/TEMP/a70c5ae88960138f4a485be4696a73e28601120eb275aaec5b1fad4e1f0ff601?apiKey=872a26b640bf4d309e24a74b10b52b7f&),
     lightgray -18px -22.486px / 158.182% 148.151% no-repeat;
   max-width: 100%;
 }
-.div-4 {
+.div-4-chatroom {
   font-family: Inter, sans-serif;
   align-self: start;
   flex-grow: 1;
 }
-.div-5 {
+.div-5-chatroom {
   background-color: #efd8cb;
   display: flex;
   width: 100%;
   flex-direction: column;
   padding: 80px 0 10px;
 }
-.div-6 {
+.div-6-chatroom {
   display: flex;
   margin-top: 377px;
   flex-direction: column;
@@ -109,39 +94,39 @@
   padding: 0 9px;
 }
 
-.img-3 {
+.img-3-chatroom {
   aspect-ratio: 1.19;
   object-fit: auto;
   object-position: center;
   width: 51px;
   margin-top: 6px;
 }
-.div-9 {
+.div-9-chatroom {
   font-family: Inter, sans-serif;
   border-radius: 30px;
   background-color: #fff;
   justify-content: center;
   padding: 10px 18px;
 }
-.div-10 {
+.div-10-chatroom {
   display: flex;
   margin-right: 11px;
   align-items: start;
   gap: 7px;
 }
-.img-4 {
+.img-4-chatroom {
   aspect-ratio: 1.15;
   object-fit: auto;
   object-position: center;
   width: 31px;
 }
-.div-11 {
+.div-11-chatroom {
   border-radius: 30px;
   background-color: #fff;
   width: 250px;
   height: 30px;
 }
-.img-5 {
+.img-5-chatroom {
   aspect-ratio: 0.93;
   object-fit: auto;
   object-position: center;

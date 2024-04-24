@@ -28,16 +28,7 @@
   color: #61dafb;
 }
 
-@keyframes LaunchPage-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.div {
+.launch-div {
   background: linear-gradient(180deg, #f3e3d9 0%, #e6c0a9 42.72%);
   display: flex;
   max-width: 100%;
@@ -49,35 +40,35 @@
   text-align: center;
   padding: 6px 30px 80px;
 }
-.img {
+.img-1-launch {
   aspect-ratio: 1.18;
   object-fit: auto;
   object-position: center;
   width: 149px;
   max-width: 100%;
 }
-.img-2 {
+.img-2-launch {
   aspect-ratio: 1;
   object-fit: auto;
   object-position: center;
   width: 230px;
-  fill: url(<path-to-image>),
+  fill: url(https://cdn.builder.io/api/v1/image/assets/TEMP/a70c5ae88960138f4a485be4696a73e28601120eb275aaec5b1fad4e1f0ff601?apiKey=872a26b640bf4d309e24a74b10b52b7f&),
     lightgray -127.916px -63px / 193.405% 129.13% no-repeat;
   margin-top: 34px;
   max-width: 100%;
 }
-.div-2 {
+.div-2-launch {
   align-self: stretch;
   margin-top: 55px;
   font: italic 25px Inter, sans-serif;
 }
-.div-3 {
+.div-3-launch {
   color: #584b4d;
   font-family: Inter, sans-serif;
   font-weight: 300;
   margin-top: 15px;
 }
-.div-4 {
+.div-4-launch {
   align-self: stretch;
   display: flex;
   margin-top: 50px;
@@ -85,7 +76,7 @@
   gap: 20px;
 }
 
-.div-5 {
+.div-5-launch {
   font-family: Inter, sans-serif;
   font-size: 20px;
   border-radius: 30px;
@@ -95,7 +86,7 @@
   padding: 7px 40px;
 }
 
-.div-6 {
+.div-6-launch {
   font-family: Inter, sans-serif;
   font-size: 20px;
   border-radius: 30px;
