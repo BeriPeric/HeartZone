@@ -2,24 +2,34 @@ import './LoginPage.css';
 import React from "react";
 import MainMatching from '../MainMatching/MainMatching';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
 
 const Button = ({ text, onClick, className }) => (
   <button className={className} onClick={onClick}>
     {text}
   </button>
 );
-
-function LoginPage(props) {
-
+const LoginPage = () => {
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleBack = () => {
     navigate(-1);
   };
 
   const handleLoginClick = () => {
-    window.location.href = '/MainMatching';
+    if (username && password) {
+      // Perform login action
+      window.location.href = '/MainMatching';
+      console.log('Logging in...');
+    } 
+    else {
+      alert('Please enter valid username and password.');
+    }
   };
+
   return (
     <>
       <section className="login-container">
@@ -31,10 +41,10 @@ function LoginPage(props) {
           <div className="content-container-login">
             <h1 className="title-login">Login</h1>
             <p className="subtitle-login">Sign in to continue</p>
-            <label htmlFor="nameInput" className="input-label visually-hidden">NAME</label>
-            <input id="nameInput" className="input-field-login" type="text" aria-label="Enter your name" placeholder="Name" />
+            <label htmlFor="username" className="input-label visually-hidden">USERNAME</label>
+            <input id="username" value={username} className="input-field-login" type="text" aria-label="Enter your username" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
             <label htmlFor="passwordInput" className="input-label visually-hidden">PASSWORD</label>
-            <input id="passwordInput" className="input-field-login" type="password" aria-label="Enter your password" placeholder="Password" />
+            <input id="passwordInput" value={password} className="input-field-login" type="password" aria-label="Enter your password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
             <button text="Login" className="signup-button-login" onClick={handleLoginClick}>Login</button>
             <Button text="Forgot password? click here" className="forgot-password" />
           </div>

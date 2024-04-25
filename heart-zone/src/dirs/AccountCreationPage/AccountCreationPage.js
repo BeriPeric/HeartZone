@@ -3,6 +3,13 @@ import ProfileCreation from '../ProfileCreation/ProfileCreation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+
+const Button = ({ text, onClick, className }) => (
+  <button className={className} onClick={onClick}>
+    {text}
+  </button>
+);
+
 const InputField = ({ label, type = 'text' }) => (
   <>
     <label htmlFor={label.toLowerCase()} className="input-label">{label}</label>
@@ -21,8 +28,11 @@ const AccountCreationPage = () => {
     navigate(-1);
   };
 
+
+
   const handleProfileCreation = () => {
       async function createProfile(){
+        
         //encrypt password before sending info to Lambda via API endpoint
         const bucket = 'heartzonedb';
         const body = { name, email, password, date };
@@ -61,18 +71,15 @@ const AccountCreationPage = () => {
 
 
 
-         <InputField label="NAME" value={name} onChange={(e) => {
+         <InputField label="NAME" type="text" value={name} onkeydown="return /[a-zA-Z]/i.test(event.key)" onChange={(e) => {
             const input = e.target.value;
             const sanitizedInput = input.replace(/[^A-Za-z]/ig, ''); // Remove non-alphabetic characters
-              setName(sanitizedInput);
-          }}
-          />
-
+              setName(sanitizedInput);}}/>
           <InputField label="EMAIL" type="email" value={email} onChange={(e) => setName(e.target.value)}/>
           <InputField label="PASSWORD" type="password" value={password} onChange={(e) => setName(e.target.value)}/>
           <InputField label="DATE OF BIRTH" type="date" value={date} onChange={(e) => setName(e.target.value)}/>
           <div className="signup-div-account">
-            <button className="signup-button-account" onClick={handleProfileCreation}>Sign Up</button>
+            <button text="Sign Up" className="signup-button-account" onClick={handleProfileCreation}>Sign Up</button>
           </div>
         </form>
       </article>
