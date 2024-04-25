@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "bf16553f-99ab-4070-af40-5b51ed75baee",
+		"name": "Verify Response Body",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34487757",
+		"_collection_link": "https://www.postman.com/cshafer081/workspace/heartzone/collection/34487757-bf16553f-99ab-4070-af40-5b51ed75baee?action=share&source=collection_link&creator=34487757"
+	},
+	"item": [
+		{
+			"name": "Verify Account File Type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"File type is JSON\", function () {\r",
+							"const response = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/3b2f5905-9a31-410d-ae98-05fe10e7c6ed.json",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"accounts",
+						"3b2f5905-9a31-410d-ae98-05fe10e7c6ed.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Existing Acc Content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify response body\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"name\");\r",
+							"    pm.expect(jsonData).to.have.property(\"email\");\r",
+							"    pm.expect(jsonData).to.have.property(\"password\");\r",
+							"    pm.expect(jsonData).to.have.property(\"dob\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/a412b267-5bb3-4717-807e-8ccd813b1f41.json",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"accounts",
+						"a412b267-5bb3-4717-807e-8ccd813b1f41.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+	"info": {
+		"_postman_id": "7b0de04a-cb2f-4d73-90c7-bcc534371e05",
+		"name": "PUT/POST/PATCH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34487757",
+		"_collection_link": "https://www.postman.com/cshafer081/workspace/heartzone/collection/34487757-7b0de04a-cb2f-4d73-90c7-bcc534371e05?action=share&source=collection_link&creator=34487757"
+	},
+	"item": [
+		{
+			"name": "Account creation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Account created successfully\", function () {\r",
+							"\tpm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"SecurePassword123!\",\r\n    \"dob\": \"1990-01-01\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/heartzonedb?file=test/calebtest.json&method=PUT",
+					"protocol": "https",
+					"host": [
+						"t4fh12f682",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"heartzonedb"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": "test/calebtest.json"
+						},
+						{
+							"key": "method",
+							"value": "PUT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify PUT Content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify request body contains required headers\", function () {",
+							"    const requestData = pm.request.body;",
+							"",
+							"   ",
+							"    const jsonData = JSON.parse(requestData);",
+							"",
+							"    pm.expect(jsonData).to.have.property(\"name\");",
+							"    pm.expect(jsonData).to.have.property(\"email\");",
+							"    pm.expect(jsonData).to.have.property(\"password\");",
+							"    pm.expect(jsonData).to.have.property(\"dob\");",
+							"",
+							"\t\tconst expectedHeaders = [\"name\", \"email\", \"password\", \"dob\"];",
+							"    const actualHeaders = Object.keys(jsonData);",
+							"    const extraProperties = actualHeaders.filter(header => !expectedHeaders.includes(header));",
+							"",
+							"    pm.expect(extraProperties).to.eql([], `Extra properties found: ${extraProperties.join(', ')}`);",
+							"",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"SecurePassword123!\",\r\n    \"dob\": \"1990-01-01\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/heartzonedb?file=test/calebtest.json&method=PUT",
+					"protocol": "https",
+					"host": [
+						"t4fh12f682",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"heartzonedb"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": "test/calebtest.json"
+						},
+						{
+							"key": "method",
+							"value": "PUT"
+						}
+					]
+				},
+				"description": "This request uses tests to verify both the structure (existence and type of individual properties) and exact values of the response data.\n\nUse `pm.expect(subject)` to wrap test subjects, and [Chai](https://www.chaijs.com/api/bdd/) for assertions."
+			},
+			"response": []
+		}
+	]
+	"info": {
+		"_postman_id": "9c05b14b-0ca4-4b34-9018-549c14adcf1c",
+		"name": "Invalid Request Handling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34487757",
+		"_collection_link": "https://www.postman.com/cshafer081/workspace/heartzone/collection/34487757-9c05b14b-0ca4-4b34-9018-549c14adcf1c?action=share&source=collection_link&creator=34487757"
+	},
+	"item": [
+		{
+			"name": "RECHECK 400: Bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify response status code is 400 for GET request\", function () {",
+							"    pm.sendRequest({",
+							"        url: 'https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/3b2f5905-9a31-410d-ae98-05fe10e7c6ed.json/%',",
+							"        method: 'GET',",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, function (err, res) {",
+							"        pm.expect(res).to.have.status(400);",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/3b2f5905-9a31-410d-ae98-05fe10e7c6ed.json/%",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"accounts",
+						"3b2f5905-9a31-410d-ae98-05fe10e7c6ed.json",
+						"%"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404: Account not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/noaccount.json",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"accounts",
+						"noaccount.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+	"info": {
+		"_postman_id": "11b1aa0c-31db-4de9-a0eb-6e09655c1b5f",
+		"name": "Verify API Response Status",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34487757",
+		"_collection_link": "https://www.postman.com/cshafer081/workspace/heartzone/collection/34487757-11b1aa0c-31db-4de9-a0eb-6e09655c1b5f?action=share&source=collection_link&creator=34487757"
+	},
+	"item": [
+		{
+			"name": "Accounts request ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data request ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/data/",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"data",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Public request ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/public/",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"public",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test request ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/test/",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://heartzonedb.s3.us-east-2.amazonaws.com/accounts/84af89f3-3e96-47dd-a7ba-273866f35885.json",
+					"protocol": "https",
+					"host": [
+						"heartzonedb",
+						"s3",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"accounts",
+						"84af89f3-3e96-47dd-a7ba-273866f35885.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
