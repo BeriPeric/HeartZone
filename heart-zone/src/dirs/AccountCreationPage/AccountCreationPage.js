@@ -60,6 +60,7 @@ const AccountCreationPage = () => {
         .catch(error =>{
           console.error('Error creating account:', error);
         });
+        navigate('/ProfileCreation');
     })();
   }
 

@@ -1,6 +1,6 @@
 import './ProfileCreation.css';
-//import React from "react";
 import ProfileView from '../ProfileView/ProfileView';
+import { useNavigate } from 'react-router-dom';
 
 const Button = ({ text, onClick, className }) => (
   <button className={className} onClick={onClick}>
@@ -17,8 +17,10 @@ const InputField = ({ label, type = 'text' }) => (
 
 const ProfileCreation = () => {
 
+  const navigate = useNavigate();
+
   const handleSaveClick = () => {
-    window.location.href = '/ProfileView';
+    navigate('/ProfileView');
   };
 
   return (
@@ -90,7 +92,21 @@ const ProfileCreation = () => {
             <option value="Windows">Windows</option>
             <option value="macOS">macOS</option>
             <option value="Linux">Linux</option>
+            <option value="Lindows">Lindows</option>
             <option value="Other">Other</option>
+          </select>
+
+          <label for="CODING LANGUAGE">CHOOSE YOUR FAVORITE CODING LANGUAGE:</label>
+          <select id="OS" name="OS">
+            <option value="Java">Java</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="Php">PHP</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Kotlin">Kotlin</option>
+            <option value="GO">GO</option>
           </select>
 
           <button text="Save" className="Save-button" onClick={handleSaveClick}>Save</button>
