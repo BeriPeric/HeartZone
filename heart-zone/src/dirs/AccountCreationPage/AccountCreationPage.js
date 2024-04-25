@@ -3,13 +3,6 @@ import ProfileCreation from '../ProfileCreation/ProfileCreation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-
-const Button = ({ text, onClick, className }) => (
-  <button className={className} onClick={onClick}>
-    {text}
-  </button>
-);
-
 const InputField = ({ label, type = 'text' }) => (
   <>
     <label htmlFor={label.toLowerCase()} className="input-label">{label}</label>
@@ -28,34 +21,46 @@ const AccountCreationPage = () => {
     navigate(-1);
   };
 
+  function handleProfileCreation(event) {
+    event.preventDefault();
 
+    (async () => {
+      //encrypt password before sending info to Lambda via API endpoint
+      const bucket = 'heartzonedb';
+      const file = 'test/filename.txt';
+      const method = 'PUT';
+      const body = { name, email, password, date };
+      const url = `https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/${bucket}?file=${file}&method=${method}`;
 
-  const handleProfileCreation = () => {
-      async function createProfile(){
-        
-        //encrypt password before sending info to Lambda via API endpoint
-        const bucket = 'heartzonedb';
-        const body = { name, email, password, date };
-        const url = `https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/${bucket}`;
-
-        const requestOptions = {
-          method: "PUT",
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(body),
-        };
-
-        try {
-          const response = await fetch(url, requestOptions);
+      const requestOptions = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(body),
+      };
+      
+      fetch(url, requestOptions)
+        .then(response => {
+          console.log('Response Status:', response.status); // Log response status code
+          console.log('Response Status Text:', response.statusText); // Log response status text
+          response.headers.forEach((value, key) => {
+            console.log(`${key}: ${value}`); // Log each header
+          });
           if (!response.ok) {
             throw new Error('Failed to create account');
           }
-          const data = await response.json();
-          console.log(data);
+          return response.text();
+        })
+        .then(data => {
+          console.log('Account created successfully');
           navigate('/ProfileCreation');
-        } catch (error) {
+        })
+        .catch(error =>{
           console.error('Error creating account:', error);
-        }
-      }
+        });
+    })();
   }
 
   return (
@@ -67,21 +72,20 @@ const AccountCreationPage = () => {
       <article className="form-container-account">
         <h1>Create a New Account</h1>
         <p>Already registered? <a href = '/LoginPage'>Log in here.</a></p>
-        <form onSubmit={handleProfileCreation}>
-
-
-
-         <InputField label="NAME" type="text" value={name} onkeydown="return /[a-zA-Z]/i.test(event.key)" onChange={(e) => {
+        <form id="contact-form" onSubmit={handleProfileCreation}>
+         <InputField label="NAME" value={name} onChange={(e) => {
             const input = e.target.value;
             const sanitizedInput = input.replace(/[^A-Za-z]/ig, ''); // Remove non-alphabetic characters
-              setName(sanitizedInput);}}/>
+              setName(sanitizedInput);
+          }}
+          />
           <InputField label="EMAIL" type="email" value={email} onChange={(e) => setName(e.target.value)}/>
           <InputField label="PASSWORD" type="password" value={password} onChange={(e) => setName(e.target.value)}/>
           <InputField label="DATE OF BIRTH" type="date" value={date} onChange={(e) => setName(e.target.value)}/>
-          <div className="signup-div-account">
-            <button text="Sign Up" className="signup-button-account" onClick={handleProfileCreation}>Sign Up</button>
-          </div>
         </form>
+        <div className="signup-div-account">
+          <button className="signup-button-account" onClick={handleProfileCreation}>Sign Up</button>
+        </div>
       </article>
     </section>
   );

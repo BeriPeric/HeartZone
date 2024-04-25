@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createRoot } from 'react-dom/client'; // Updated import
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
-import * as dirs from './dirs/import-dirs.js'
+import * as dirs from './dirs/import-dirs.js';
 import reportWebVitals from './reportWebVitals';
 
-//Routes to different pages of our app
-ReactDOM.render(
+// Get the container element
+const container = document.getElementById('root');
+const root = createRoot(container); // Create a root instance
+
+// Routes to different pages of our app
+root.render(
   <Router>
     <Routes>
       <Route path="/" element={<dirs.LaunchPage />} />
@@ -19,12 +23,8 @@ ReactDOM.render(
       <Route path="/matches" element={<dirs.Matches />} />
       <Route path="/profileview" element={<dirs.ProfileView />} />
     </Routes>
-  </Router>,
-
-  document.getElementById("root")
+  </Router>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Optionally, you can continue to use reportWebVitals or any other analytics or performance monitoring logic
 reportWebVitals();
