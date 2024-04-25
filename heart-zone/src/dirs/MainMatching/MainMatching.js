@@ -49,14 +49,14 @@ function MainMatching(props) {
             <div className="div-5-match">
               <div className="div-6-match">
                 <div className="div-7-match">
-                  Dakota, 20
+                  Cillian Murphy, 47
                 </div>
                 <div className="div-8-match">
-                  <div className="div-9-match">CyberSec</div>
-                  <div className="div-10-match">Java</div>
+                  <div className="div-9-match">Cyber Sec</div>
+                  <div className="div-10-match">Kotlin</div>
                 </div>
               </div>
-              <div className="div-11-match">Mac</div>
+              <div className="div-11-match">Lindows</div>
             </div>
           </div>
           <div className="div-12-match" />

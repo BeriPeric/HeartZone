@@ -44,16 +44,15 @@ function ProfileView(props) {
           <div className="div-3-profile">Profile Preview</div>
           <div className="div-4-profile">
             <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/88a79b937da8cf249598ea4d60a0aa5e403334a452969f157323ec1a67050c76?apiKey=872a26b640bf4d309e24a74b10b52b7f&"
+              src="../../../public/cyberpunk.jpg"
               className="img-3-profile"
             />
             <div className="div-5-profile">
               <div className="div-6-profile">
-                <div className="div-7-profile">Peyton, 21</div>
+                <div className="div-7-profile">Ryan Gosling, 43</div>
                 <div className="div-8-profile">
-                  <div className="div-9-profile">Comp Sci</div>
-                  <div className="div-10-profile">C++</div>
+                  <div className="div-9-profile">Cyber Sec</div>
+                  <div className="div-10-profile">Python</div>
                 </div>
               </div>
               <div className="div-11-profile">Linux</div>
