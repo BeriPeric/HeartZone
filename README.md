@@ -44,4 +44,7 @@ heart-zone/APITestImport.json: Content (JSON)
                   API Test through Postman. We verify the account file type. Verify existing account content. Account Creation with PUT method. Invalid request handling. Verify API response status.
 
 heart-zone/APITest.md: Content (JavaScript, HTML (JSX), CSS for Chat page)
-                  Postman API Test documentation.   
+                  Postman API Test documentation.
+
+dirs/test: Content (JavaScript tests)
+                  React.js test to test if each page on our application renders properly.
