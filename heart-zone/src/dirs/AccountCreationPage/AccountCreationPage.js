@@ -53,14 +53,13 @@ const AccountCreationPage = () => {
           }
           return response.text();
         })
-        .then(data => {
+        .then(data => { //navigate to next page if api put call works successfully
           console.log('Account created successfully');
           navigate('/ProfileCreation');
         })
         .catch(error =>{
           console.error('Error creating account:', error);
         });
-        navigate('/ProfileCreation');
     })();
   }
 
