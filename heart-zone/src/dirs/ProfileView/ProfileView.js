@@ -44,7 +44,7 @@ function ProfileView(props) {
           <div className="div-3-profile">Profile Preview</div>
           <div className="div-4-profile">
             <img
-              src="../../../public/cyberpunk.jpg"
+              src="/cyberpunk.jpg"
               className="img-3-profile"
             />
             <div className="div-5-profile">

@@ -1,0 +1,7 @@
+These two files are part of one Lambda function
+This Lambda function is ran through the Lambda Service on AWS
+It handles the API methods and directs data from our app to our S3 bucket
+
+Two run this lambda function we also had to setup a API endpoint using AWS API Gateway
+# API Endpoint: https://t4fh12f682.execute-api.us-east-2.amazonaws.com/v1/{bucket}
+# {bucket} would equal the name of the bucket we used to store user data which is: heartzonedb
